@@ -1,6 +1,9 @@
 .paddtop-10 {
   padding-top: 10px;
 }
+.paddtop-20 {
+  padding-top: 20px;
+}
 .paddtop-30 {
   padding-top: 30px;
 }
@@ -118,7 +121,23 @@ a.bolder {
   text-decoration: none;
   padding-right: 5px;
 }
-/************************ end user form ***********************/
 #error_explanation {
   color: #e5e5e5;
 }
+.edit-profile {
+  min-height: 630px;
+}
+.edit-profile form {
+  padding-left: 20px;
+  padding-bottom: 30px;
+}
+.edit-profile input {
+  width: 60%;
+}
+.update-user-btn input {
+  width: auto;
+}
+.edit-profile #error_explanation {
+  color: #D73434;
+}
+/************************ end user form ***********************/

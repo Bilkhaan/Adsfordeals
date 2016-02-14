@@ -24,7 +24,6 @@ module AdsForDealz
     config.active_record.raise_in_transactional_callbacks = true
     config.to_prepare do
       Devise::SessionsController.layout 'normal'
-      Devise::RegistrationsController.layout 'normal'
       Devise::PasswordsController.layout 'normal'
     end
   end
