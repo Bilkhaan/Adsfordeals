@@ -1,3 +1,9 @@
+.paddtop-10 {
+  padding-top: 10px;
+}
+.paddtop-30 {
+  padding-top: 30px;
+}
 .paddtop-40 {
   padding-top: 40px;
 }
@@ -15,6 +21,33 @@
 }
 #all-ads {
   padding-bottom: 30px;
+}
+a.bolder {
+  font-weight: bolder;
+  font-size: 30px;
+  font-family: fantasy;
+  margin-left: 45px;
+}
+#all-ads h3 {
+  text-align: center
+}
+.coins-earned {
+  padding-top: 16px;
+  padding-bottom: 9px;
+  padding-right: 7px;
+  color: #999;
+}
+.landing-container {
+  text-align: center;
+  padding-bottom: 20px;
+}
+.landing-container img {
+  width: 45%;
+}
+.landing-intro {
+  font-size: 17px;
+  padding: 20px 45px 0px 45px;
+  color: #e5e5e5;
 }
 /************************** card ****************/
 .card {
@@ -55,12 +88,37 @@
   border-top: 1px solid #e5e5e5;
 }
 /*********************** card end *************************/
-#all-ads h3 {
-  text-align: center
+/************************* user form *****************/
+.user-form {
+  background-color: transparent;
+  border-color: #525252;
 }
-.coins-earned {
-  padding-top: 16px;
-  padding-bottom: 9px;
-  padding-right: 7px;
-  color: #999;
+.user-form .panel-heading {
+  background-color: #e5e5e5;
+}
+.user-form label {
+  color: #e5e5e5;
+}
+.user-form input {
+  background-color: transparent;
+  color: #e5e5e5;
+}
+.user-form em {
+  color: #525252;
+}
+.user-form input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #222 inset;
+  -webkit-text-fill-color: #e5e5e5 !important;
+}
+.user-links {
+  padding-top: 20px;
+  color: #e5e5e5;
+}
+.user-links a {
+  text-decoration: none;
+  padding-right: 5px;
+}
+/************************ end user form ***********************/
+#error_explanation {
+  color: #e5e5e5;
 }
