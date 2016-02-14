@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: ads_for_dealz_production
+  database: ads_dealz_production
   username: ads_for_dealz
   password: <%= ENV['ADS_FOR_DEALZ_DATABASE_PASSWORD'] %>
