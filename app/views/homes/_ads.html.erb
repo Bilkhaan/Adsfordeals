@@ -8,195 +8,78 @@
     Featured Ads <small>Never miss these</small>
   </h3>
   <div class="row">
-    <div class="col-md-3">
-      <div class="card text-xs-center">
-        <div class="card-header green-bg">
-          <strong>Featured</strong>
+    <% if @featured.blank? %>
+      <h3>Sorry there are no featured Ads available right now.</h3>
+    <% else %>
+      <% @featured.each do |featured_ad| %>
+        <div class="col-md-3">
+          <div class="card text-xs-center">
+            <div class="card-header green-bg">
+              <strong>Featured</strong>
+            </div>
+            <div class="card-block">
+              <h4 class="card-title"><%= featured_ad.title %></h4>
+              <p class="card-text"><%= featured_ad.description %></p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            <div class="card-footer text-muted">
+              <strong><%= featured_ad.coins %> coins</strong>
+            </div>
+          </div>
         </div>
-        <div class="card-block">
-          <h4 class="card-title">Special title treatment</h4>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        <div class="card-footer text-muted">
-          <strong>5 coins</strong>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card text-xs-center">
-        <div class="card-header green-bg">
-          <strong>Featured</strong>
-        </div>
-        <div class="card-block">
-          <h4 class="card-title">Special title treatment</h4>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        <div class="card-footer text-muted">
-          <strong>5 coins</strong>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card text-xs-center">
-        <div class="card-header green-bg">
-          <strong>Featured</strong>
-        </div>
-        <div class="card-block">
-          <h4 class="card-title">Special title treatment</h4>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        <div class="card-footer text-muted">
-          <strong>5 coins</strong>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card text-xs-center">
-        <div class="card-header green-bg">
-          <strong>Featured</strong>
-        </div>
-        <div class="card-block">
-          <h4 class="card-title">Special title treatment</h4>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        <div class="card-footer text-muted">
-          <strong>5 coins</strong>
-        </div>
-      </div>
-    </div>
+      <% end %>
+    <% end %>
   </div>
   <div class="row paddtop-40">
     <h3 class="page-header">
       Regular Ads <small>Generate good coins</small>
     </h3>
-    <div class="col-md-3">
-      <div class="card text-xs-center">
-        <div class="card-header blue-bg">
-          <strong>Regular</strong>
+    <% if @regular.blank? %>
+      <h3>Sorry there are no regular Ads available right now.</h3>
+    <% else %>
+      <% @regular.each do |regular_ad| %>
+        <div class="col-md-3">
+          <div class="card text-xs-center">
+            <div class="card-header green-bg">
+              <strong>Regular</strong>
+            </div>
+            <div class="card-block">
+              <h4 class="card-title"><%= regular_ad.title %></h4>
+              <p class="card-text"><%= regular_ad.description %></p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            <div class="card-footer text-muted">
+              <strong><%= regular_ad.coins %> coins</strong>
+            </div>
+          </div>
         </div>
-        <div class="card-block">
-          <h4 class="card-title">Special title treatment</h4>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        <div class="card-footer text-muted">
-          <strong>3 coins</strong>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card text-xs-center">
-        <div class="card-header blue-bg">
-          <strong>Regular</strong>
-        </div>
-        <div class="card-block">
-          <h4 class="card-title">Special title treatment</h4>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        <div class="card-footer text-muted">
-          <strong>3 coins</strong>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card text-xs-center">
-        <div class="card-header blue-bg">
-          <strong>Regular</strong>
-        </div>
-        <div class="card-block">
-          <h4 class="card-title">Special title treatment</h4>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        <div class="card-footer text-muted">
-          <strong>3 coins</strong>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card text-xs-center">
-        <div class="card-header blue-bg">
-          <strong>Regular</strong>
-        </div>
-        <div class="card-block">
-          <h4 class="card-title">Special title treatment</h4>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        <div class="card-footer text-muted">
-          <strong>3 coins</strong>
-        </div>
-      </div>
-    </div>
+      <% end %>
+    <% end %>
   </div>
   <div class="row paddtop-40">
     <h3 class="page-header">
       Default Ads <small>Always available to you</small>
     </h3>
-    <div class="col-md-3">
-      <div class="card text-xs-center">
-        <div class="card-header orange-bg">
-          <strong>Default</strong>
+    <% if @default.blank? %>
+      <h3>Sorry there are no default Ads available right now.</h3>
+    <% else %>
+      <% @default.each do |default_ad| %>
+        <div class="col-md-3">
+          <div class="card text-xs-center">
+            <div class="card-header green-bg">
+              <strong>Default</strong>
+            </div>
+            <div class="card-block">
+              <h4 class="card-title"><%= default_ad.title %></h4>
+              <p class="card-text"><%= default_ad.description %></p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            <div class="card-footer text-muted">
+              <strong><%= default_ad.coins %> coins</strong>
+            </div>
+          </div>
         </div>
-        <div class="card-block">
-          <h4 class="card-title">Special title treatment</h4>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        <div class="card-footer text-muted">
-          <strong>1 coins</strong>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card text-xs-center">
-        <div class="card-header orange-bg">
-          <strong>Default</strong>
-        </div>
-        <div class="card-block">
-          <h4 class="card-title">Special title treatment</h4>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        <div class="card-footer text-muted">
-          <strong>1 coins</strong>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card text-xs-center">
-        <div class="card-header orange-bg">
-          <strong>Default</strong>
-        </div>
-        <div class="card-block">
-          <h4 class="card-title">Special title treatment</h4>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        <div class="card-footer text-muted">
-          <strong>1 coins</strong>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card text-xs-center">
-        <div class="card-header orange-bg">
-          <strong>Default</strong>
-        </div>
-        <div class="card-block">
-          <h4 class="card-title">Special title treatment</h4>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        <div class="card-footer text-muted">
-          <strong>1 coins</strong>
-        </div>
-      </div>
-    </div>
+      <% end %>
+    <% end %>
   </div>
 </div>

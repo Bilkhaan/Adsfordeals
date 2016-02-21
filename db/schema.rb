@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160214075845) do
+ActiveRecord::Schema.define(version: 20160220195728) do
+
+  create_table "ads", force: :cascade do |t|
+    t.string   "title",       limit: 255
+    t.text     "description", limit: 65535
+    t.string   "ad_type",     limit: 20
+    t.string   "priority",    limit: 20
+    t.integer  "coins",       limit: 4
+    t.string   "content",     limit: 255
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
