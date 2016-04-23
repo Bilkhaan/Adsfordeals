@@ -26,6 +26,7 @@ gem 'therubyracer'
 gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
+gem 'obfuscate_id'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
