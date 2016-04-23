@@ -8,7 +8,6 @@
 
 body {
     margin-top: 100px;
-    background-color: #222;
 }
 
 @media(min-width:768px) {
@@ -33,10 +32,6 @@ body {
 }
 
 @media(min-width:768px) {
-    #wrapper {
-        padding-left: 225px;
-    }
-
     #page-wrapper {
         padding: 10px;
     }
@@ -112,6 +107,18 @@ ul.alert-dropdown {
 
 /* Side Navigation */
 
+@media(max-width:767px) {
+    .navbar-collapse{
+        background-color: #222;
+    }
+
+    .side-nav li a:hover,
+    .side-nav li a:focus {
+        outline: none;
+        background-color: #000 !important;
+    }
+}
+
 @media(min-width:768px) {
     .side-nav {
         position: fixed;
@@ -144,9 +151,8 @@ ul.alert-dropdown {
     padding: 0;
 }
 
-.side-nav>li>ul>li>a {
+.side-nav>li>a {
     display: block;
-    padding: 10px 15px 10px 38px;
     text-decoration: none;
     color: #999;
 }

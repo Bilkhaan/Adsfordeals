@@ -1,3 +1,6 @@
+.no-padding {
+  padding: 0px;
+}
 .paddtop-10 {
   padding-top: 10px;
 }
@@ -92,6 +95,12 @@ a.bolder {
 }
 /*********************** card end *************************/
 /************************* user form *****************/
+.container < #normal-view {
+  background-color: black;
+}
+.bg-black {
+  background-color: #222;
+}
 .user-form {
   background-color: transparent;
   border-color: #525252;
@@ -141,3 +150,16 @@ a.bolder {
   color: #D73434;
 }
 /************************ end user form ***********************/
+
+/*********************** show content item ********************/
+.success-notice {
+  padding-top: 30px;
+  float: left;
+  font-weight: bold;
+  padding-left: 0px;
+}
+.content-frame {
+  width: 100%;
+  height: 1000px;
+  padding-top: 10px;
+}

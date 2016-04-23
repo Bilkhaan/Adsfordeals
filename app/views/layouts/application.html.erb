@@ -1,22 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>AdsForDealz | Watch and earn online</title>
-  <%= favicon_link_tag 'fav_icon.ico' %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
+<%= render partial: '/layouts/head' %>
 <body>
   <div id="wrapper">
     <%= render partial: '/layouts/navigation.html.erb' %>
-    <%= yield %>
+    <dir class="row no-padding">
+      <div class="col-md-2 col-sm-3">
+        <%= render partial: '/layouts/side_bar' %>
+      </div>
+      <div class="col-md-10 col-sm-9">
+        <%= yield %>
+      </div>
+    </dir>
   </div>
 </body>
 </html>
