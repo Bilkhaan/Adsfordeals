@@ -3,11 +3,7 @@
 <%= render partial: '/layouts/head' %>
 <body>
   <div>
-    <nav class='navbar navbar-inverse navbar-fixed-top' role='navigation'>
-      <div class='navbar-header'>
-        <a class='navbar-brand bolder'>Ads For Dealz</a>
-      </div>
-    </nav>
+    <%= render partial: '/layouts/navigation.html.erb' %>
     <div class='paddtop-10'>
       <%= yield %>
     </div>
