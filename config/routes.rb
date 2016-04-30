@@ -4,5 +4,9 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations' }
   root 'homes#dashboard'
 
-  resources :content_items, only: [:show]
+  resources :content_items, only: [:show] do
+    member do
+      post :completed_ad
+    end
+  end
 end
