@@ -12,6 +12,7 @@ class ContentItem < ActiveRecord::Base
   def not_allowed recorded_items
     return false unless recorded_items.present?
     recorded_item = recorded_items.find_by_content_item_id(self.id)
+    return false if recorded_item.blank?
     recorded_item.last_viewed_at.to_date >= Date.today
   end
 end
