@@ -9,4 +9,10 @@ Rails.application.routes.draw do
       post :completed_ad
     end
   end
+
+  resources :users, only: [] do
+    collection do
+      get :analytics
+    end
+  end
 end

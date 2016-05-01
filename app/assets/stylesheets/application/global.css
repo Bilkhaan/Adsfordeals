@@ -169,3 +169,30 @@ a.bolder {
 .close-ad {
   margin: 24px 0px 20px 25px;
 }
+/************************** show content ends ************************/
+
+/*************************** Analytics section ***********************/
+.ad-type-name {
+  padding: 20px 0px;
+  font-size: 28px;
+}
+.total-watched-ads {
+  font-size: 20px;
+  color: #555;
+}
+.watched-ads-count {
+  font-size: 28px;
+  color: #555;
+}
+.panel-orange {
+  background-color: #f0ad4e;
+}
+.panel-orange .panel-heading {
+  color: #fff;
+}
+.panel-gold {
+  background-color: #DAA520;
+}
+.panel-gold .panel-heading {
+  color: #fff;
+}

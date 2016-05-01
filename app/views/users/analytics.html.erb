@@ -1,0 +1,54 @@
+<div id="page-wrapper">
+  <h1 class="page-header">
+    Analytics
+  </h1>
+  <div class="col-md-12 paddtop-40">
+    <% @visited_ads.each do |visited_ad| %>
+      <div class="col-lg-3 col-md-6">
+        <div class="panel text-center <%= panel_class(visited_ad.ad_priority) %>">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="ad-type-name"><%= "#{visited_ad.priority} Ads" %></div>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <div class="total-watched-ads">Total Watched</div>
+            <div class="watched-ads-count"><%= visited_ad.count %></div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <div class="col-lg-3 col-md-6">
+      <div class="panel panel-red text-center">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="ad-type-name">Total Ads</div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <div class="total-watched-ads">Total Watched</div>
+          <div class="watched-ads-count"><%= current_user.watched_ads %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12 paddtop-20">
+    <h3 class="page-header">
+      Earnings
+    </h3>
+    <div class="col-lg-3 col-md-6">
+      <div class="panel panel-gold text-center">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="ad-type-name">Earnings</div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <div class="total-watched-ads">Total Coins</div>
+          <div class="watched-ads-count"><%= current_user.coins %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</div>
