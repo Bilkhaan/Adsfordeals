@@ -7,7 +7,7 @@
             <i class="fa fa-envelope-o fa-5x"></i>
           </div>
           <div class="col-xs-9 text-right">
-            <div class="huge">26</div>
+            <div class="huge"><%= @ads.count %></div>
             <div>Available Ads</div>
           </div>
         </div>
@@ -29,7 +29,7 @@
             <i class="fa fa-money fa-5x"></i>
           </div>
           <div class="col-xs-9 text-right">
-            <div class="huge">120</div>
+            <div class="huge"><%= current_user.coins %></div>
             <div>Coins Earned</div>
           </div>
         </div>
@@ -51,7 +51,7 @@
             <i class="fa fa-folder-open-o fa-5x"></i>
           </div>
           <div class="col-xs-9 text-right">
-            <div class="huge">142</div>
+            <div class="huge"><%= current_user.watched_ads %></div>
             <div>Watched Ads</div>
           </div>
         </div>
@@ -73,7 +73,7 @@
             <i class="fa fa-users fa-5x"></i>
           </div>
           <div class="col-xs-9 text-right">
-            <div class="huge">5</div>
+            <div class="huge">0</div>
             <div>Total Referrels</div>
           </div>
         </div>
