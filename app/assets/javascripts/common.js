@@ -37,14 +37,8 @@ var add_coins_to_user = function() {
 
 var on_ad_success = function(data) {
   if(data['user'] && data['success'] == true) {
-    var btn = $('<button/>', {
-      text: 'Close this Ad',
-      class: 'btn btn-primary close_ad',
-      click: function () {
-        window.close();
-      }
-    });
-    $('#circuler-spin').html(btn);
+    $('#circuler-spin').addClass('hidden');
+    $('.close-ad').removeClass('hidden');
     $('#user-coins').text(data['user'].coins);
   } else {
     $('#circuler-spin').html('Sorry, there was some error. Can you please try again.');

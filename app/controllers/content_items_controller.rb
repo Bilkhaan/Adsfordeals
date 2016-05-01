@@ -1,6 +1,8 @@
 class ContentItemsController < ApplicationController
+  before_action :authenticate_user!
   before_action :obfuscate_content_item, only: [:show]
   before_action :set_content_item, only: [:completed_ad]
+  before_action :already_watched, only: [:show]
   layout 'blank'
 
   def show
@@ -23,5 +25,10 @@ class ContentItemsController < ApplicationController
 
   def set_content_item
     @content_item = ContentItem.find_by_id(params[:id])
+  end
+
+  def already_watched
+    recorded_items = current_user.recorded_items
+    redirect_to root_url, alert: 'You have already watched this Ad' if @content_item.not_allowed(recorded_items)
   end
 end
