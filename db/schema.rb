@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160424123421) do
+ActiveRecord::Schema.define(version: 20160430191445) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -56,6 +56,17 @@ ActiveRecord::Schema.define(version: 20160424123421) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
+
+  create_table "recorded_items", force: :cascade do |t|
+    t.integer  "user_id",         limit: 4
+    t.integer  "content_item_id", limit: 4
+    t.datetime "last_viewed_at"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "recorded_items", ["content_item_id"], name: "index_recorded_items_on_content_item_id", using: :btree
+  add_index "recorded_items", ["user_id"], name: "index_recorded_items_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255,   default: "", null: false
