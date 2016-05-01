@@ -1,5 +1,5 @@
 ActiveAdmin.register ContentItem do
-  permit_params :title, :description, :priority, :ad_type, :coins, :content
+  permit_params :title, :description, :priority, :ad_type, :coins, :content, :is_active, :is_deleted
 
   form do |f|
     f.inputs 'Details' do
@@ -11,6 +11,8 @@ ActiveAdmin.register ContentItem do
           collection: ContentItem::CONTENT_PRIORITIES.collect {|v| [v, v]}
       f.input :content
       f.input :coins
+      f.input :is_active
+      f.input :is_deleted
     end
     f.actions
   end

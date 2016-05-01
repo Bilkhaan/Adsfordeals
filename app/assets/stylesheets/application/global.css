@@ -140,7 +140,7 @@ a.bolder {
   padding-left: 20px;
   padding-bottom: 30px;
 }
-.edit-profile input {
+.edit-profile input, .edit-profile textarea {
   width: 60%;
 }
 .update-user-btn input {
