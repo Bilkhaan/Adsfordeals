@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160430191445) do
+ActiveRecord::Schema.define(version: 20160501081110) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -53,9 +53,14 @@ ActiveRecord::Schema.define(version: 20160430191445) do
     t.string   "priority",    limit: 20
     t.integer  "coins",       limit: 4
     t.string   "content",     limit: 255
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+    t.boolean  "is_active",                 default: true
+    t.boolean  "is_deleted",                default: false
   end
+
+  add_index "content_items", ["is_active"], name: "index_content_items_on_is_active", using: :btree
+  add_index "content_items", ["is_deleted"], name: "index_content_items_on_is_deleted", using: :btree
 
   create_table "recorded_items", force: :cascade do |t|
     t.integer  "user_id",         limit: 4

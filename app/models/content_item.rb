@@ -1,6 +1,8 @@
 class ContentItem < ActiveRecord::Base
   obfuscate_id spin: 42864269
 
+  scope :active_ads, -> { where(is_active: true) }
+
   has_many :recorded_items, dependent: :destroy
   has_many :users, through: :recorded_items
 

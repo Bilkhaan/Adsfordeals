@@ -2,7 +2,7 @@ class HomesController < ApplicationController
   before_action :authenticate_user!
 
   def dashboard
-    @ads = ContentItem.all
+    @ads = ContentItem.active_ads
     @featured = @ads.where(priority: 'featured')
     @regular = @ads.where(priority: 'regular')
     @default = @ads.where(priority: 'default')
