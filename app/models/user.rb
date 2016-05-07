@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :visited_ads, dependent: :destroy
   has_many :recorded_items, dependent: :destroy
   has_many :content_items, through: :recorded_items
+  has_many :payments, dependent: :destroy
 
   validates :username, presence: true
 

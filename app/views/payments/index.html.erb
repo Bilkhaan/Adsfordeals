@@ -1,0 +1,31 @@
+<div class="col-md-12">
+  <h1 class="page-header">
+    Transaction History
+  </h1>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Transaction type</th>
+          <th>Method</th>
+          <th>Unit price</th>
+          <th>Quantity</th>
+          <th>Total price</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @payments.each do |payment| %>
+          <tr>
+            <td><%= payment.paymentable_type %></td>
+            <td><%= payment.method %></td>
+            <td><%= payment.price_per_unit %></td>
+            <td><%= payment.quantity %></td>
+            <td><%= payment.total_amount %></td>
+            <td><%= payment.created_at %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

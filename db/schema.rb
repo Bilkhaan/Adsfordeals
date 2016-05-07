@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160501081110) do
+ActiveRecord::Schema.define(version: 20160505193708) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -61,6 +61,21 @@ ActiveRecord::Schema.define(version: 20160501081110) do
 
   add_index "content_items", ["is_active"], name: "index_content_items_on_is_active", using: :btree
   add_index "content_items", ["is_deleted"], name: "index_content_items_on_is_deleted", using: :btree
+
+  create_table "payments", force: :cascade do |t|
+    t.integer  "paymentable_id",   limit: 4
+    t.string   "paymentable_type", limit: 255
+    t.integer  "user_id",          limit: 4
+    t.integer  "quantity",         limit: 4,                  default: 0
+    t.decimal  "price_per_unit",               precision: 10
+    t.string   "method",           limit: 15
+    t.decimal  "total_amount",                 precision: 10
+    t.datetime "created_at",                                              null: false
+    t.datetime "updated_at",                                              null: false
+  end
+
+  add_index "payments", ["paymentable_type", "paymentable_id"], name: "index_payments_on_paymentable_type_and_paymentable_id", using: :btree
+  add_index "payments", ["user_id"], name: "index_payments_on_user_id", using: :btree
 
   create_table "recorded_items", force: :cascade do |t|
     t.integer  "user_id",         limit: 4

@@ -15,4 +15,6 @@ Rails.application.routes.draw do
       get :analytics
     end
   end
+
+  get '/transactions' => 'payments#index'
 end
