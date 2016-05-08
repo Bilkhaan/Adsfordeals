@@ -225,10 +225,6 @@ a.pay-now-btn {
   background-color: #fff;
   margin-bottom: 10px;
 }
-.item.list-group-item:nth-of-type(odd):hover,.item.list-group-item:hover
-{
-  background: #428bca;
-}
 .item.list-group-item .list-group-image
 {
   margin-right: 10px;
@@ -240,10 +236,6 @@ a.pay-now-btn {
 .item.list-group-item .caption
 {
   padding: 9px 9px 0px 9px;
-}
-.item.list-group-item:nth-of-type(odd)
-{
-  background: #eeeeee;
 }
 .item.list-group-item:before, .item.list-group-item:after
 {
@@ -261,4 +253,7 @@ a.pay-now-btn {
 .list-group-item-text
 {
   margin: 0 0 11px;
+}
+.list-group .list-group-item {
+  border: none;
 }
