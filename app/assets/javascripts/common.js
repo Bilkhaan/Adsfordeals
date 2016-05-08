@@ -21,6 +21,17 @@ $(document).ready(function() {
       }
     });
   }
+
+  $('#list').click(function(event){
+    event.preventDefault();
+    $('#item_tiles .item').addClass('list-group-item');
+  });
+
+  $('#grid').click(function(event){
+    event.preventDefault();
+    $('#item_tiles .item').removeClass('list-group-item');
+    $('#item_tiles .item').addClass('grid-group-item');
+  });
 });
 
 var add_coins_to_user = function() {

@@ -16,5 +16,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :rewards, only: [:index, :show]
+
   get '/transactions' => 'payments#index'
 end

@@ -1,0 +1,13 @@
+<div class="col-md-12 paddtop-10 paddbottom-60">
+  <h1 class="page-header"><%= @reward.title %></h1>
+  <div class="col-md-8 reward-desc-column">
+    <%= image_tag("http://placehold.it/400x250/000/fff") %>
+    <div class="reward-description paddtop-30"><%= @reward.description %></div>
+  </div>
+  <div class="col-md-4">
+    <div class="text-center">
+      <h2><%= @reward.price_in_coins %> Coins</h2>
+      <%= link_to 'Pay now', "#{}", class: 'btn btn-success pay-now-btn' %>
+    </div>
+  </div>
+</div>
