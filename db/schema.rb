@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160508104412) do
+ActiveRecord::Schema.define(version: 20160516190339) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -72,6 +72,17 @@ ActiveRecord::Schema.define(version: 20160508104412) do
     t.string   "city",           limit: 50
     t.datetime "created_at",                                                  null: false
     t.datetime "updated_at",                                                  null: false
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.string   "photo_file_name",    limit: 255
+    t.string   "photo_content_type", limit: 255
+    t.integer  "photo_file_size",    limit: 4
+    t.datetime "photo_updated_at"
+    t.integer  "imageable_id",       limit: 4
+    t.string   "imageable_type",     limit: 255
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "payments", force: :cascade do |t|

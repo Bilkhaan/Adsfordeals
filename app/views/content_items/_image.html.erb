@@ -1,0 +1,5 @@
+<% @content_item.images.each do |image| %>
+  <div class="col-md-12 paddtop-40 text-center">
+    <%= image_tag image.photo.url %>
+  </div>
+<% end %>

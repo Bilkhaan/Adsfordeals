@@ -96,6 +96,9 @@ a.bolder {
   color: #545050;
   border-top: 1px solid #e5e5e5;
 }
+.card-block img {
+  width: 100px;
+}
 /*********************** card end *************************/
 /************************* user form *****************/
 .bg-black {
@@ -257,3 +260,4 @@ a.pay-now-btn {
 .list-group .list-group-item {
   border: none;
 }
+/************************ Reward Section end *********************/

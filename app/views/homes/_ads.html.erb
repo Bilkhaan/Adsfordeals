@@ -19,6 +19,7 @@
             </div>
             <div class="card-block">
               <h4 class="card-title"><%= featured_ad.title %></h4>
+              <div class="text-center"><%= image_tag featured_ad.main_image %></div>
               <p class="card-text"><%= featured_ad.description %></p>
               <%= link_to 'View this Ad', content_item_path(featured_ad), class: 'btn btn-primary' unless featured_ad.not_allowed(@recorded_items) %>
             </div>
@@ -45,6 +46,7 @@
             </div>
             <div class="card-block">
               <h4 class="card-title"><%= regular_ad.title %></h4>
+              <div class="text-center"><%= image_tag regular_ad.main_image %></div>
               <p class="card-text"><%= regular_ad.description %></p>
               <%= link_to 'View this Ad', content_item_path(regular_ad), class: 'btn btn-primary' unless regular_ad.not_allowed(@recorded_items) %>
             </div>
@@ -71,6 +73,7 @@
             </div>
             <div class="card-block">
               <h4 class="card-title"><%= default_ad.title %></h4>
+              <div class="text-center"><%= image_tag default_ad.main_image %></div>
               <p class="card-text"><%= default_ad.description %></p>
               <%= link_to 'View this Ad', content_item_path(default_ad), class: 'btn btn-primary' unless default_ad.not_allowed(@recorded_items) %>
             </div>

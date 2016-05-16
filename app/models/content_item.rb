@@ -6,6 +6,9 @@ class ContentItem < ActiveRecord::Base
   has_many :recorded_items, dependent: :destroy
   has_many :users, through: :recorded_items
 
+  has_many :images, as: :imageable, dependent: :destroy
+  accepts_nested_attributes_for :images, reject_if: lambda { |attributes| attributes[:photo].blank? }, allow_destroy: true
+
   CONTENT_TYPES = %w(web image video)
   CONTENT_PRIORITIES = %w(featured regular default)
 
@@ -13,6 +16,11 @@ class ContentItem < ActiveRecord::Base
     return false unless recorded_items.present?
     recorded_item = recorded_items.find_by_content_item_id(self.id)
     return false if recorded_item.blank?
-    recorded_item.last_viewed_at.to_date >= Date.today
+    hours_diff = ((Time.now - recorded_item.last_viewed_at) / 1.hour).round
+    hours_diff > 23
+  end
+
+  def main_image
+    self.images.present? ? self.images.first.photo.url(:thumb) : 'default.jpg'
   end
 end
