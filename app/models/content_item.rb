@@ -17,7 +17,7 @@ class ContentItem < ActiveRecord::Base
     recorded_item = recorded_items.find_by_content_item_id(self.id)
     return false if recorded_item.blank?
     hours_diff = ((Time.now - recorded_item.last_viewed_at) / 1.hour).round
-    hours_diff > 23
+    hours_diff < 24
   end
 
   def main_image
