@@ -1,0 +1,6 @@
+<div class="video-wrapper text-center">
+  <div class="video_iframe">
+    <img class="ratio" src="http://placehold.it/16x9"/>
+    <%= @video_content.embed_code(url_attributes: { autoplay: 1 }).html_safe %>
+  </div>
+</div>

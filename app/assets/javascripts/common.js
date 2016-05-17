@@ -10,7 +10,7 @@ $(document).ready(function() {
       percentage: true,
       color: 'black',
       lineWidth: 7,
-      timer: 100,
+      timer: 150,
       radius: 40,
       fontStyle: 'Calibri',
       fontSize: '18pt',

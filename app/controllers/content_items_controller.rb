@@ -3,6 +3,7 @@ class ContentItemsController < ApplicationController
   before_action :obfuscate_content_item, only: [:show]
   before_action :set_content_item, only: [:completed_ad]
   before_action :already_watched, only: [:show]
+  before_action :set_video_content, only: [:show]
   layout 'blank'
 
   def show
@@ -30,5 +31,9 @@ class ContentItemsController < ApplicationController
   def already_watched
     recorded_items = current_user.recorded_items
     redirect_to root_url, alert: 'You have already watched this Ad' if @content_item.not_allowed(recorded_items)
+  end
+
+  def set_video_content
+    @video_content = @content_item.video_object if @content_item && @content_item.is_video?
   end
 end

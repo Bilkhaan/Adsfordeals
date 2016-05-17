@@ -23,4 +23,12 @@ class ContentItem < ActiveRecord::Base
   def main_image
     self.images.present? ? self.images.first.photo.url(:thumb) : 'default.jpg'
   end
+
+  def is_video?
+    self.ad_type == 'video'
+  end
+
+  def video_object
+    VideoInfo.new(self.content)
+  end
 end
