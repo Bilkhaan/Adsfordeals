@@ -1,3 +1,4 @@
 <% if @payment_success %>
   $('#user-coins').text(<%= current_user.coins %>);
+  $('.reward-modal').html("<%= j render(partial: 'shared/modal') %>");
 <% end %>
