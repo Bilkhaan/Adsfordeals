@@ -16,7 +16,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :rewards, only: [:index, :show]
+  resources :rewards, only: [:index, :show] do
+    member do
+      post :purchase
+    end
+  end
 
   get '/transactions' => 'payments#index'
 end

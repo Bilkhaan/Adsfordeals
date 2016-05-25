@@ -283,4 +283,7 @@ a.pay-now-btn {
 .thumbnail img {
   width: 150px;
 }
+.modal-body h4 {
+  color: red;
+}
 /************************ Reward Section end *********************/

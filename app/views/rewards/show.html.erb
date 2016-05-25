@@ -11,7 +11,44 @@
   <div class="col-md-4">
     <div class="text-center">
       <h2><%= @reward.price_in_coins %> Coins</h2>
-      <%= link_to 'Pay now', "#{}", class: 'btn btn-success pay-now-btn' %>
+      <%= link_to 'Pay now', "", class: 'btn btn-success pay-now-btn', data: {toggle: 'modal', target: '#myModal'} %>
+    </div>
+  </div>
+</div>
+
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Purchase Confirmation</h4>
+        <p class="paddtop-20">We will be sending the reward shortly using your personal information provided to us. Please make sure you have added correct information.</p>
+      </div>
+      <div class="modal-body">
+        <% if can_purchase? %>
+          <h5>Address:</h5>
+          <p><%= current_user.address %></p>
+          <h5>Phone number:</h5>
+          <p><%= current_user.phone %></p>
+          <% if can_purchase_with_coins?(@reward.price_in_coins) %>
+            <strong>Are you sure, you want to purchase "<%= @reward.title %>" for <%= @reward.price_in_coins %> Coins?</strong>
+          <% else %>
+            <h4>Sorry! you don't have enough coins to purchase this reward.</h4>
+          <% end %>
+        <% else %>
+          <% unless has_address? %>
+            <h4>Address is missing</h4>
+            <p>Please set address on this <%= link_to 'link', edit_user_registration_path %></p>
+          <% end %>
+          <% unless has_phone? %>
+            <h4>Phone number is missing</h4>
+            <p>Please set phone number on this <%= link_to 'link', edit_user_registration_path %></p>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <%= link_to 'back', '', class: 'btn btn-default', data: { dismiss: 'modal' } %>
+        <%= link_to 'Confirm', purchase_reward_path, class: 'btn btn-success', method: :post, remote: true, data: { dismiss: 'modal' } if can_purchase_with_coins?(@reward.price_in_coins) %>
+      </div>
     </div>
   </div>
 </div>
