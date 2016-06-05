@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
 
   validates :username, presence: true
 
+  before_create :assign_bonus_coins
+
   def mark_as_visited content_item
     visited_ad = self.visited_ads.find_or_initialize_by(ad_priority: content_item.priority)
     visited_ad.increment!(:count)
@@ -18,5 +20,11 @@ class User < ActiveRecord::Base
     recorded_item.update(last_viewed_at: Time.now)
     self.increment(:coins, content_item.coins)
     self.increment!(:watched_ads)
+  end
+
+  private
+
+  def assign_bonus_coins
+    self.coins = 500
   end
 end

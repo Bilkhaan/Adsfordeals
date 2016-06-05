@@ -1,3 +1,6 @@
+<% if first_sign_in(request.referrer) %>
+  <%= render partial: 'bonus_modal' %>
+<% end %>
 <div id="page-wrapper">
   <div class="container-fluid">
     <div class="row">

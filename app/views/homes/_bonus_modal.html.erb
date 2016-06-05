@@ -1,0 +1,21 @@
+<div id="myModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 class="modal-title">Congratulations!</h3>
+      </div>
+      <div class="modal-body">
+        <p>You have been awarded sign up bonus of 500 coins. You can earn more by watching Ads available on this website.</p>
+      </div>
+      <div class="modal-footer">
+        <%= link_to 'Thanks!', '', class: 'btn btn-success', data: { dismiss: 'modal' } %>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#myModal').modal('show');
+  });
+</script>
