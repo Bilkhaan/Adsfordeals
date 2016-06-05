@@ -1,4 +1,6 @@
 <% if @payment_success %>
   $('#user-coins').text(<%= current_user.coins %>);
   $('.reward-modal').html("<%= j render(partial: 'shared/modal') %>");
+<% else %>
+  alert("You do not have enough coins");
 <% end %>
