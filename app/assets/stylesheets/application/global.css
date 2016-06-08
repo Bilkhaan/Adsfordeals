@@ -290,3 +290,10 @@ a.pay-now-btn {
   color: red;
 }
 /************************ Reward Section end *********************/
+/************************ header start ***************************/
+.deals-menu {
+  color: #5cb85c;
+  font-size: 18px;
+  margin-left: 10px;
+}
+/************************ header end *****************************/

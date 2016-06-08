@@ -1,0 +1,60 @@
+<div class="col-md-12 paddtop-40" style="border-right: 1px solid #ddd;">
+  <div class="col-md-8" style="border-right: 1px solid #ddd;padding-left: 2px;padding-right: 2px;">
+    <div class="row">
+      <div class="col-md-12">
+        <h4><%= @deal.title %> for just Rs. <%= @deal.price %>/- </h4>
+      </div>
+      <% @deal.images.each do |image| %>
+        <div class="paddtop-40 text-center">
+          <%= image_tag image.photo.url(:large) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="col-md-12">
+      <div class="col-md-12">
+        <h3 class="margintop-10 text-center"> Rs <%= @deal.price %></h3>
+      </div>
+      <div>
+        <%= link_to 'Buy now', "", class: 'btn btn-success pay-now-btn', data: {toggle: 'modal', target: '#myModal'} %>
+      </div>
+      <div class="dealinfbox">
+        <div class="text-center">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8 paddtop-20" style="border-right: 1px solid #ddd;padding-left: 2px;padding-right: 2px;">
+    <div class="col-md-12">
+      <div class="col-md-6">
+        <div>
+          <h4>Highlights </h4>
+          <p><%= @deal.highlight %></p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h4>Fineprints</h4>
+        <p><%= @deal.fine_print %></p>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-6">
+        <div class="paddtop-10">
+          <h4>Description</h4>
+          <p><%= @deal.description %></p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="paddtop-10">
+          <h4>Location</h4>
+          <p>This deal available at <%= @deal.location %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="myModal" class="modal fade reward-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;">
+  <%= render partial: 'modal' %>
+</div>

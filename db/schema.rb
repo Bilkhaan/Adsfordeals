@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160605152438) do
+ActiveRecord::Schema.define(version: 20160607164040) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -63,15 +63,21 @@ ActiveRecord::Schema.define(version: 20160605152438) do
   add_index "content_items", ["is_deleted"], name: "index_content_items_on_is_deleted", using: :btree
 
   create_table "deals", force: :cascade do |t|
-    t.string   "title",          limit: 255
-    t.text     "description",    limit: 65535
-    t.boolean  "buy_by_coins",                                default: false
-    t.decimal  "price_in_coins",               precision: 10
-    t.decimal  "price_in_cash",                precision: 10
-    t.decimal  "original_price",               precision: 10
-    t.string   "city",           limit: 50
-    t.datetime "created_at",                                                  null: false
-    t.datetime "updated_at",                                                  null: false
+    t.string   "title",                limit: 255
+    t.text     "description",          limit: 65535
+    t.text     "highlight",            limit: 65535
+    t.text     "package",              limit: 65535
+    t.string   "facebook_link",        limit: 255
+    t.text     "fine_print",           limit: 65535
+    t.integer  "price",                limit: 4
+    t.integer  "price_after_discount", limit: 4
+    t.integer  "discount",             limit: 4
+    t.integer  "coins",                limit: 4
+    t.integer  "price_after_coins",    limit: 4
+    t.string   "location",             limit: 255
+    t.datetime "valid_to"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
 
   create_table "images", force: :cascade do |t|

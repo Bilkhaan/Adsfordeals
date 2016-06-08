@@ -10,6 +10,11 @@
   </div>
   <ul class="nav navbar-right top-nav">
     <li>
+      <%= link_to deals_path do %>
+        <strong class="deals-menu">Deals</strong>
+      <% end %>
+    </li>
+    <li>
       <div class="coins-earned"><strong>Coins: </strong>
         <span id="user-coins"><%= current_user.coins %></span>
       </div>
