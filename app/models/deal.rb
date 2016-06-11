@@ -4,6 +4,6 @@ class Deal < ActiveRecord::Base
   accepts_nested_attributes_for :images, reject_if: lambda { |attributes| attributes[:photo].blank? }, allow_destroy: true
 
   def main_image
-    self.images.present? ? self.images.first.photo.url(:thumb) : 'default.jpg'
+    self.images.present? ? self.images.first.photo.url(:medium) : 'default.jpg'
   end
 end

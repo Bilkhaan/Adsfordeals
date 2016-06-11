@@ -1,14 +1,15 @@
-<div class="col-md-12 paddtop-40" style="border-right: 1px solid #ddd;">
-  <div class="col-md-8" style="border-right: 1px solid #ddd;padding-left: 2px;padding-right: 2px;">
+<div class="col-md-12 paddtop-40">
+  <div><%= link_to '<< All Deals', deals_path %></div>
+  <div class="col-md-8 right-border">
     <div class="row">
       <div class="col-md-12">
-        <h4><%= @deal.title %> for just Rs. <%= @deal.price %>/- </h4>
+        <h2><%= @deal.title %> for just Rs. <%= @deal.price %>/- </h2>
+        <% @deal.images.each do |image| %>
+          <div class="text-center paddtop-20 deal-image">
+            <%= image_tag image.photo.url(:large) %>
+          </div>
+        <% end %>
       </div>
-      <% @deal.images.each do |image| %>
-        <div class="paddtop-40 text-center">
-          <%= image_tag image.photo.url(:large) %>
-        </div>
-      <% end %>
     </div>
   </div>
   <div class="col-md-4">
@@ -16,16 +17,12 @@
       <div class="col-md-12">
         <h3 class="margintop-10 text-center"> Rs <%= @deal.price %></h3>
       </div>
-      <div>
+      <div class="text-center">
         <%= link_to 'Buy now', "", class: 'btn btn-success pay-now-btn', data: {toggle: 'modal', target: '#myModal'} %>
-      </div>
-      <div class="dealinfbox">
-        <div class="text-center">
-        </div>
       </div>
     </div>
   </div>
-  <div class="col-md-8 paddtop-20" style="border-right: 1px solid #ddd;padding-left: 2px;padding-right: 2px;">
+  <div class="col-md-8 paddtop-20 right-border">
     <div class="col-md-12">
       <div class="col-md-6">
         <div>

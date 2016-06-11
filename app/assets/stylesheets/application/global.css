@@ -236,14 +236,6 @@ a.pay-now-btn {
   width: 99%;
 }
 .glyphicon { margin-right:5px; }
-.thumbnail
-{
-  margin-bottom: 20px;
-  padding: 0px;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  border-radius: 0px;
-}
 .item.list-group-item
 {
   float: none;
@@ -283,17 +275,30 @@ a.pay-now-btn {
 .list-group .list-group-item {
   border: none;
 }
-.thumbnail img {
-  width: 150px;
-}
 .modal-body h4 {
   color: red;
 }
 /************************ Reward Section end *********************/
+
 /************************ header start ***************************/
 .deals-menu {
   color: #5cb85c;
   font-size: 18px;
-  margin-left: 10px;
+}
+.sign-in-container {
+  padding: 40px 10px 10px 10px;
+  color: #e2e2e2;
+}
+.sign-in-btn {
+  min-width: 191px;
 }
 /************************ header end *****************************/
+
+/************************ deal section ***************************/
+.right-border {
+  border-right: 1px solid #dadada;
+}
+.deal-image img {
+  width: 100%;
+}
+/************************ deal end *******************************/

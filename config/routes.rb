@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users, controllers: { registrations: 'registrations', confirmations: 'confirmations' }
-  root 'homes#dashboard'
+  root 'deals#index'
 
   resources :content_items, only: [:show] do
     member do
@@ -25,4 +25,5 @@ Rails.application.routes.draw do
   resources :deals, only: [:index, :show]
 
   get '/transactions' => 'payments#index'
+  get '/dashboard' => 'homes#dashboard'
 end

@@ -1,5 +1,5 @@
 class DealsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_deal, only: [:show, :purchase]
 
   def index
