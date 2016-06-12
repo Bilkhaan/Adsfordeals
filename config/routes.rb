@@ -22,7 +22,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :deals, only: [:index, :show]
+  resources :deals, only: [:index, :show] do
+    member do
+      post :purchase
+    end
+  end
 
   get '/transactions' => 'payments#index'
   get '/dashboard' => 'homes#dashboard'

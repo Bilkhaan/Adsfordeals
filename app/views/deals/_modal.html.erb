@@ -5,9 +5,29 @@
       <p class="paddtop-20">We will be sending the deal shortly using your personal information provided to us. Please make sure you have added correct information.</p>
     </div>
     <div class="modal-body">
+      <% if current_user %>
+        <% if can_purchase? %>
+          <h5>Address:</h5>
+          <p><%= current_user.address %></p>
+          <h5>Phone number:</h5>
+          <p><%= current_user.phone %></p>
+        <% else %>
+          <% unless has_address? %>
+            <h4>Address is missing</h4>
+            <p>Please set address on this <%= link_to 'link', edit_user_registration_path %></p>
+          <% end %>
+          <% unless has_phone? %>
+            <h4>Phone number is missing</h4>
+            <p>Please set phone number on this <%= link_to 'link', edit_user_registration_path %></p>
+          <% end %>
+        <% end %>
+      <% else %>
+        <h4>You need to sign in to purchase a deal.</h4>
+      <% end %>
     </div>
     <div class="modal-footer">
       <%= link_to 'back', '', class: 'btn btn-default', data: { dismiss: 'modal' } %>
+      <%= link_to 'Confirm', purchase_deal_path, class: 'btn btn-success', method: :post, remote: true, data: { dismiss: 'modal' } if current_user %>
     </div>
   </div>
 </div>

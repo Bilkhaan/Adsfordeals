@@ -2,7 +2,7 @@
   <ul class="nav navbar-nav side-nav">
     <% if current_user %>
       <li class="active">
-        <%= link_to '<i class="fa fa-fw fa-dashboard"></i> Dashboard'.html_safe, root_url %>
+        <%= link_to '<i class="fa fa-fw fa-dashboard"></i> Dashboard'.html_safe, dashboard_path %>
       </li>
       <li>
         <%= link_to '<i class="fa fa-fw fa-gift"></i> Rewards'.html_safe, rewards_path %>

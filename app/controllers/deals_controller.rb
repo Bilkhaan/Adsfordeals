@@ -6,16 +6,16 @@ class DealsController < ApplicationController
     @deals = Deal.all
   end
 
-  # def show
-  # end
+  def show
+  end
 
-  # def purchase
-  #   @payment_success  = @deal.record_payment(params, current_user)
+  def purchase
+    @payment_success  = @deal.record_payment(current_user)
 
-  #   respond_to do |format|
-  #     format.js
-  #   end
-  # end
+    respond_to do |format|
+      format.js
+    end
+  end
 
   private
 
